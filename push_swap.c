@@ -6,7 +6,7 @@
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 19:39:55 by albelmon          #+#    #+#             */
-/*   Updated: 2026/01/13 14:54:41 by albelmon         ###   ########.fr       */
+/*   Updated: 2026/01/13 16:08:13 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 int	push_swap(int argc, char **argv)
 {
 	t_stack *stack_a;
+	t_stack *stack_b;
 
+	stack_b = NULL;
 	stack_a = NULL;
 	ft_check_input(argc, **argv, stack_a);
 	return (0);
@@ -82,7 +84,7 @@ int	ft_check_duplicates(t_stack *stack_a, int n)
 	while (stack_a)
 	{
 		if (stack_a->value == n)
-			return (1);
+			return (write(2, "error\n", 6), 1);
 		stack_a = stack_a->next;
 	}
 	return (0);
