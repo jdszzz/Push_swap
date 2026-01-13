@@ -6,7 +6,7 @@
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 19:39:55 by albelmon          #+#    #+#             */
-/*   Updated: 2026/01/13 14:12:01 by albelmon         ###   ########.fr       */
+/*   Updated: 2026/01/13 14:54:41 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,30 @@ int	ft_check_input(int argc, char **argv, t_stack *stack_a)
 	}
 }
 
-void	ft_add_to_stack(int argv, int i, t_stack *stack_a)
+void	ft_add_to_stack(int value, int index, t_stack **stack_a)
 {
-	stack_a = malloc(sizeof(t_stack));
-	if (!stack_a)
-		return (NULL);
-	stack_a->value = argv;
-	stack_a->index = i;
+	t_stack *new_node;
+	t_stack	*last_node;
+
+	new_node = malloc(sizeof(t_stack));
+	if (!new_node)
+		return (free(new_node), NULL);
+	new_node->value = value;
+	new_node->index = index;
+	new_node->next = NULL;
+	if (*stack_a == NULL)
+	{
+		*stack_a = new_node;
+		new_node->prev = NULL;
+	}
+	else
+	{
+		last_node = *stack_a;
+		while (last_node->next != NULL)
+			last_node = last_node->next;
+		last_node->next = new_node;
+		new_node->prev = last_node;
+	}
 }
 
 int	ft_check_duplicates(t_stack *stack_a, int n)
