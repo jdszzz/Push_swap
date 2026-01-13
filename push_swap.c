@@ -6,7 +6,7 @@
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 19:39:55 by albelmon          #+#    #+#             */
-/*   Updated: 2026/01/13 01:38:48 by albelmon         ###   ########.fr       */
+/*   Updated: 2026/01/13 14:12:01 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,50 +15,58 @@
 
 int	push_swap(int argc, char **argv)
 {
-	ft_check_input(argc, **argv);
+	t_stack *stack_a;
+
+	stack_a = NULL;
+	ft_check_input(argc, **argv, stack_a);
 	return (0);
 }
 
-int	ft_check_input(int argc, char **argv)
+int	ft_check_input(int argc, char **argv, t_stack *stack_a)
 {
 	int	i;
 	int	j;
-	int	n;
-	
-	j = 0;
-	i = 0;
-	n = 0;
+	int	**temp_numbers;
+
+	i = 1;
+	temp_numbers = NULL;
 	if (argc < 2)
-		return (write(2, "error\n", 6));
-	while (*argv)
+		return (write(2, "error\n", 6), 1);
+	while (i < argc)
 	{
-		while (j || argv[i][j] == ' ' || argv[i][j] == ft_isdigit(argv[i][j]))
+		temp_numbers = ft_split(argv[i++], ' ');
+		j = 0;
+		while (temp_numbers[j])
 		{
-			if (argv[i][j] == ft_isdigit(argv[i][j]))
-				ft_add_to_stack(argv[i][j], n++);
+			if (ft_isdigit(temp_numbers[j]))
+			{
+				ft_atoi(temp_numbers[j]);
+				ft_check_duplicates(stack_a, temp_numbers[j]);
+				ft_add_to_stack(temp_numbers[j], i, stack_a);
+			}
+			else
+				return (write(2, "error\n", 6), 1);
 			j++;
 		}
-		i++;
-		if (!argv[i][j] == ' ' || !argv[i][j] == ft_isdigit(*argv))
-			return (write(2, "error\n", 6));
-	}
-
-
-	while (*argv)
-	{
-		while (argv)
-		if (!argv[i][j] == ' ' || !argv[i][j] == ft_isdigit(*argv))
-			return (write(2, "error\n", 6));
 	}
 }
 
-void	ft_add_to_stack(int argv, int i)
+void	ft_add_to_stack(int argv, int i, t_stack *stack_a)
 {
-	t_stack *stack_a;
-
 	stack_a = malloc(sizeof(t_stack));
 	if (!stack_a)
 		return (NULL);
 	stack_a->value = argv;
 	stack_a->index = i;
+}
+
+int	ft_check_duplicates(t_stack *stack_a, int n)
+{
+	while (stack_a)
+	{
+		if (stack_a->value == n)
+			return (1);
+		stack_a = stack_a->next;
+	}
+	return (0);
 }

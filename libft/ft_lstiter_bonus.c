@@ -6,38 +6,12 @@
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 09:42:10 by albelmon          #+#    #+#             */
-/*   Updated: 2025/10/17 15:48:09 by albelmon         ###   ########.fr       */
+/*   Updated: 2026/01/13 12:22:23 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/**
- * ft_lstiter - Apply a function to each element's content in a linked list.
- *
- * @lst: Pointer to the first node of a singly linked list. 
- * If NULL, nothing is done.
- * @f: Function pointer to call for each node's content. If NULL, 
- * nothing is done.
- *
- * Description:
- * Traverses the list beginning at 'lst' and calls the function '
- * f' once for each
- * node, passing the node's 'content' as the single argument.
- *  Iteration proceeds
- * from head to tail following the 'next' pointers.
- *  The list nodes themselves are
- * not modified or freed by this function.
- *
- * Notes:
- * - If either 'lst' or 'f' is NULL, the function returns immediately.
- * - It is the caller's responsibility to ensure that 'f'
- *  handles the content
- *   correctly (type, lifetime) and that any side effects are intended.
- * - Modifying the list structure (adding/removing nodes or 
- * changing 'next')
- *   inside 'f' may lead to undefined behavior during traversal.
- */
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (!lst || !f)
