@@ -1,3 +1,5 @@
+Top son los primeros argumetos que recibe.
+
 🔄 Intercambios (Swaps)
 -sa (swap a): Intercambia los dos primeros elementos en la cima de la pila a. No hace nada si hay uno o ningún elemento.
 -sb (swap b): Intercambia los dos primeros elementos en la cima de la pila b. No hace nada si hay uno o ningún elemento.
