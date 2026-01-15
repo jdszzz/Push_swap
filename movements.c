@@ -6,7 +6,7 @@
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 16:00:47 by albelmon          #+#    #+#             */
-/*   Updated: 2026/01/14 03:36:54 by albelmon         ###   ########.fr       */
+/*   Updated: 2026/01/15 20:39:38 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ void	ft_swap(t_stack **stack)
 	t_stack	*first;
 	t_stack	*second;
 
-	first = malloc(sizeof(t_stack));
-	second = malloc(sizeof(t_stack));
-	if (!*stack || !((*stack)->next))
+	if (!stack || !*stack || !((*stack)->next))
 		return ;
 	first = *stack;
 	second = first->next;
@@ -33,9 +31,22 @@ void	ft_swap(t_stack **stack)
 	*stack = second;
 }
 
-void	ft_push(t_stack **stack_a, t_stack **stack_b)
+//pa-pb: Toma el primer elemento en la cima de b y lo pone en la cima de a. No hace nada si b está vacía.
+void	ft_push_a(t_stack **a, t_stack **b)
 {
-	
+	t_stack	*node;
+
+	if (!a || !b || !*b)
+		return ;
+	node = *b;
+	*b = (*b)->next;
+	if (*b)
+		(*b)->prev = NULL;
+	node->next = *a;
+	if (*a)
+		(*a)->prev = node;
+	*a = node;
+	(*a)->prev = NULL;
 }
 
 //ra-rb-rr: Desplaza hacia arriba todos los elementos de la pila a una posición. El primer elemento se convierte en el último.
@@ -44,8 +55,8 @@ void	ft_rotate(t_stack **stack)
 	t_stack	*first;
 	t_stack	*last;
 
-	last = malloc(sizeof(t_stack));
-	first = malloc(sizeof(t_stack));
+	if (!stack || !*stack || (*stack)-> next)
+		return ;
 	last = *stack;
 	first = *stack;
 	while (last->next)
@@ -57,7 +68,20 @@ void	ft_rotate(t_stack **stack)
 	first->next = NULL;
 }
 
+//rra-rrb-rrr: Desplaza hacia abajo todos los elementos de la pila a una posición. El último elemento se convierte en el primero.
 void	ft_reverse_rotate(t_stack **stack)
 {
-	
+	t_stack	*last;
+
+	if (!stack || !*stack || (*stack)-> next)
+		return ;
+	last = *stack;
+	while (last->next)
+		last = last->next;
+	if (last->prev)
+		last->prev->next = NULL;
+	last->next = *stack;
+	last->prev = NULL;
+	(*stack)->prev = last;
+	*stack = last;
 }
