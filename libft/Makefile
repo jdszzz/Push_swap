@@ -6,7 +6,7 @@
 #    By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/06 19:41:12 by albelmon          #+#    #+#              #
-#    Updated: 2025/10/27 14:52:40 by albelmon         ###   ########.fr        #
+#    Updated: 2026/01/16 16:44:47 by albelmon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,8 @@ SRC = 	ft_isalpha.c			ft_isprint.c			ft_isupper.c					\
 		ft_get_substr.c			ft_str_toupper.c		ft_str_tolower.c				\
 		ft_putchar_fd.c			ft_putstr_fd.c			ft_putendl_fd.c					\
 		ft_putnbr_fd.c			ft_toupper.c			ft_tolower.c					\
-		ft_putnbr_unsigned_fd.c	ft_get_ptr_addr.c
+		ft_putnbr_unsigned_fd.c	ft_get_ptr_addr.c		ft_is_string_digit.c			\
+		ft_atoi_ps.c
 
 BONUS_SRC = ft_lstnew_bonus.c		ft_lstadd_front_bonus.c		ft_lstsize_bonus.c		\
             ft_lstlast_bonus.c		ft_lstadd_back_bonus.c		ft_lstdelone_bonus.c	\

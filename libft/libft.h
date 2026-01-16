@@ -6,7 +6,7 @@
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 13:03:05 by albelmon          #+#    #+#             */
-/*   Updated: 2025/10/30 10:39:12 by albelmon         ###   ########.fr       */
+/*   Updated: 2026/01/16 16:44:31 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int			ft_memcmp(const void *s1, const void *s2, size_t n);
 char		*ft_strdup(const char *s);
 
 /* ************************************************************************** */
-/*                             CHARACTER CHECKS                               */
+/*                             CHECKS                                         */
 /* ************************************************************************** */
 
 int			ft_isalnum(int c);
@@ -53,6 +53,7 @@ int			ft_isdigit(int c);
 int			ft_isprint(int c);
 int			ft_isupper(int c);
 int			ft_islower(int c);
+int			ft_is_string_digit(char	*str);
 
 /* ************************************************************************** */
 /*                                STRING FUNCTIONS                            */
@@ -88,6 +89,7 @@ int			ft_hexlen(unsigned long n);
 char		ft_digit_to_char(int n);
 char		*ft_dec_to_hex(unsigned long n);
 int			ft_atoi(const char *nptr);
+long		ft_atoi_ps(const char *str);
 char		*ft_itoa(int n);
 char		*ft_str_toupper(char *str);
 char		*ft_str_tolower(char *str);

@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_is_string_digit.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/13 15:31:37 by albelmon          #+#    #+#             */
-/*   Updated: 2026/01/16 12:04:22 by albelmon         ###   ########.fr       */
+/*   Created: 2026/01/16 12:24:38 by albelmon          #+#    #+#             */
+/*   Updated: 2026/01/16 12:51:44 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_free_stack(t_stack **stack)
+int	ft_is_string_digit(char	*str)
 {
-	t_stack	*tmp;
-	
-	if (!*stack)
-		return ;
-	while (*stack)
+	int	i;
+
+	i = 0;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	if (str[i] == '\0')
+		return (0);
+	while(str[i])
 	{
-		tmp = (*stack)->next;
-		free(*stack);
-		*stack = tmp;
+		if (!(str[i] >= '0' && str[i] <= '9'))
+			return (0);
+		i++;	
 	}
+	return (1);
 }
 
-void	ft_error(t_stack **stack_a, t_stack **stack_b)
+/* int	main(void)
 {
-	ft_free_stack(stack_a);
-	ft_free_stack(stack_b);
-	write(2, "Error\n", 6);
-	exit(1);
-}
+	char	*str;
+
+	str = "1";
+	printf("%i\n", ft_is_string_digit(str));
+	return (0);
+} */
