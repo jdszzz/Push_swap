@@ -6,7 +6,7 @@
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 19:39:55 by albelmon          #+#    #+#             */
-/*   Updated: 2026/01/13 16:08:13 by albelmon         ###   ########.fr       */
+/*   Updated: 2026/01/16 00:34:19 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 
 int	push_swap(int argc, char **argv)
 {
-	t_stack *stack_a;
-	t_stack *stack_b;
+	t_stack *a;
+	t_stack *b;
 
-	stack_b = NULL;
-	stack_a = NULL;
-	ft_check_input(argc, **argv, stack_a);
+	b = NULL;
+	a = NULL;
+	ft_check_input(argc, **argv, a);
 	return (0);
 }
 
-int	ft_check_input(int argc, char **argv, t_stack *stack_a)
+int	ft_check_input(int argc, char **argv, t_stack *a)
 {
 	int	i;
 	int	j;
@@ -43,8 +43,8 @@ int	ft_check_input(int argc, char **argv, t_stack *stack_a)
 			if (ft_isdigit(temp_numbers[j]))
 			{
 				ft_atoi(temp_numbers[j]);
-				ft_check_duplicates(stack_a, temp_numbers[j]);
-				ft_add_to_stack(temp_numbers[j], i, stack_a);
+				ft_check_duplicates(a, temp_numbers[j]);
+				ft_add_to_stack(temp_numbers[j], i, a);
 			}
 			else
 				return (write(2, "error\n", 6), 1);
@@ -53,7 +53,7 @@ int	ft_check_input(int argc, char **argv, t_stack *stack_a)
 	}
 }
 
-void	ft_add_to_stack(int value, int index, t_stack **stack_a)
+void	ft_add_to_stack(int value, int index, t_stack **a)
 {
 	t_stack *new_node;
 	t_stack	*last_node;
@@ -64,14 +64,14 @@ void	ft_add_to_stack(int value, int index, t_stack **stack_a)
 	new_node->value = value;
 	new_node->index = index;
 	new_node->next = NULL;
-	if (*stack_a == NULL)
+	if (*a == NULL)
 	{
-		*stack_a = new_node;
+		*a = new_node;
 		new_node->prev = NULL;
 	}
 	else
 	{
-		last_node = *stack_a;
+		last_node = *a;
 		while (last_node->next != NULL)
 			last_node = last_node->next;
 		last_node->next = new_node;
@@ -79,13 +79,13 @@ void	ft_add_to_stack(int value, int index, t_stack **stack_a)
 	}
 }
 
-int	ft_check_duplicates(t_stack *stack_a, int n)
+int	ft_check_duplicates(t_stack *a, int n)
 {
-	while (stack_a)
+	while (a)
 	{
-		if (stack_a->value == n)
+		if (a->value == n)
 			return (write(2, "error\n", 6), 1);
-		stack_a = stack_a->next;
+		a = a->next;
 	}
 	return (0);
 }

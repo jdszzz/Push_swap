@@ -6,7 +6,7 @@
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 16:00:47 by albelmon          #+#    #+#             */
-/*   Updated: 2026/01/15 20:39:38 by albelmon         ###   ########.fr       */
+/*   Updated: 2026/01/16 00:56:42 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_swap(t_stack **stack)
 	*stack = second;
 }
 
-//pa-pb: Toma el primer elemento en la cima de b y lo pone en la cima de a. No hace nada si b está vacía.
+//pa: Toma el primer elemento en la cima de b y lo pone en la cima de a. No hace nada si b está vacía.
 void	ft_push_a(t_stack **a, t_stack **b)
 {
 	t_stack	*node;
@@ -49,7 +49,25 @@ void	ft_push_a(t_stack **a, t_stack **b)
 	(*a)->prev = NULL;
 }
 
-//ra-rb-rr: Desplaza hacia arriba todos los elementos de la pila a una posición. El primer elemento se convierte en el último.
+//pb: Toma el primer elemento en la cima de a y lo pone en la cima de b. No hace nada si a está vacía.
+void	ft_push_b(t_stack **b, t_stack **a)
+{
+	t_stack	*node;
+
+	if (!b || !a || !*a)
+		return ;
+	node = *a;
+	*a = (*a)->next;
+	if (*a)
+		(*a)->prev = NULL;
+	node->next = *b;
+	if (*b)
+		(*b)->prev = node;
+	*b = node;
+	(*b)->prev = NULL;
+}
+
+//ra-rb: Desplaza hacia arriba todos los elementos de la pila a una posición. El primer elemento se convierte en el último.
 void	ft_rotate(t_stack **stack)
 {
 	t_stack	*first;
@@ -68,7 +86,7 @@ void	ft_rotate(t_stack **stack)
 	first->next = NULL;
 }
 
-//rra-rrb-rrr: Desplaza hacia abajo todos los elementos de la pila a una posición. El último elemento se convierte en el primero.
+//rra-rrb: Desplaza hacia abajo todos los elementos de la pila a una posición. El último elemento se convierte en el primero.
 void	ft_reverse_rotate(t_stack **stack)
 {
 	t_stack	*last;
