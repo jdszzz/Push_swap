@@ -6,7 +6,7 @@
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 16:33:53 by albelmon          #+#    #+#             */
-/*   Updated: 2026/01/16 16:44:11 by albelmon         ###   ########.fr       */
+/*   Updated: 2026/01/19 12:59:35 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,18 @@ long	ft_atoi_ps(const char *str)
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
-		if (str[i] == '-')
+		if (str[i++] == '-')
 			sign = -1;
-		i++;
 	}
 	while (str[i] == '0' && str[i + 1] != '\0')
 		i++;
 	if (ft_strlen(&str[i]) > 10)
-		return ((long)INT_MAX + 1);
-	while (str[i] >= '0' && str[i] <= '9')
 	{
-		res = (res * 10) + (str[i] - '0');
-		i++;
+		if (sign == 1)
+			return (2147483648L);
+		return (-2147483648L);
 	}
+	while (str[i] >= '0' && str[i] <= '9')
+		res = (res * 10) + (str[i++] - '0');
 	return (res * sign);
 }

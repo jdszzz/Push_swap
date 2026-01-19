@@ -6,7 +6,7 @@
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 16:00:47 by albelmon          #+#    #+#             */
-/*   Updated: 2026/01/16 00:56:42 by albelmon         ###   ########.fr       */
+/*   Updated: 2026/01/19 17:50:49 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	ft_rotate(t_stack **stack)
 	t_stack	*first;
 	t_stack	*last;
 
-	if (!stack || !*stack || (*stack)-> next)
+	if (!stack || !*stack || !((*stack)->next))
 		return ;
 	last = *stack;
 	first = *stack;
@@ -91,7 +91,7 @@ void	ft_reverse_rotate(t_stack **stack)
 {
 	t_stack	*last;
 
-	if (!stack || !*stack || (*stack)-> next)
+	if (!stack || !*stack || !((*stack)->next))
 		return ;
 	last = *stack;
 	while (last->next)

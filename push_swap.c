@@ -6,7 +6,7 @@
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 19:39:55 by albelmon          #+#    #+#             */
-/*   Updated: 2026/01/16 11:42:57 by albelmon         ###   ########.fr       */
+/*   Updated: 2026/01/19 17:48:31 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,21 @@ int	push_swap(int argc, char **argv)
 
 	b = NULL;
 	a = NULL;
-	ft_check_input(argc, **argv, a);
+	if (argc < 2)
+		return (0);
+	ft_check_input(argc, argv, &a);
 	return (0);
 }
 
-void	ft_add_to_stack(int value, int index, t_stack **a)
+void	ft_add_to_stack(t_stack **a, int value)
 {
 	t_stack *new_node;
 	t_stack	*last_node;
 
 	new_node = malloc(sizeof(t_stack));
 	if (!new_node)
-		return (free(new_node), NULL);
+		ft_error(a, NULL);
 	new_node->value = value;
-	new_node->index = index;
 	new_node->next = NULL;
 	if (*a == NULL)
 	{
