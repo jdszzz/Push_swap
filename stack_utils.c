@@ -6,7 +6,7 @@
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 19:10:32 by albelmon          #+#    #+#             */
-/*   Updated: 2026/01/19 19:10:50 by albelmon         ###   ########.fr       */
+/*   Updated: 2026/01/21 14:01:22 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,27 @@ void	ft_add_to_stack(t_stack **a, int value)
 		new_node->prev = last_node;
 	}
 }
+
+int	ft_stack_size(t_stack *stack)
+{
+	int	i;
+
+	if (!stack)
+		return (0);
+	i = 0;
+	while (stack)
+	{
+		stack = stack->next;
+		i++;
+	}
+	return (i);
+}
+
+/* t_stack	*ft_node_last(t_stack *node)
+{
+	if (!node)
+		return (NULL);
+	while (node->next != NULL)
+		node = node->next;
+	return (node);
+} */
