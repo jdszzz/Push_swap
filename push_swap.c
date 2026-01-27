@@ -6,7 +6,7 @@
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 19:39:55 by albelmon          #+#    #+#             */
-/*   Updated: 2026/01/19 17:48:31 by albelmon         ###   ########.fr       */
+/*   Updated: 2026/01/26 16:36:42 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,29 +24,4 @@ int	push_swap(int argc, char **argv)
 		return (0);
 	ft_check_input(argc, argv, &a);
 	return (0);
-}
-
-void	ft_add_to_stack(t_stack **a, int value)
-{
-	t_stack *new_node;
-	t_stack	*last_node;
-
-	new_node = malloc(sizeof(t_stack));
-	if (!new_node)
-		ft_error(a, NULL);
-	new_node->value = value;
-	new_node->next = NULL;
-	if (*a == NULL)
-	{
-		*a = new_node;
-		new_node->prev = NULL;
-	}
-	else
-	{
-		last_node = *a;
-		while (last_node->next != NULL)
-			last_node = last_node->next;
-		last_node->next = new_node;
-		new_node->prev = last_node;
-	}
 }

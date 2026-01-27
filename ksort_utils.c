@@ -6,7 +6,7 @@
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 19:01:51 by albelmon          #+#    #+#             */
-/*   Updated: 2026/01/21 13:56:22 by albelmon         ###   ########.fr       */
+/*   Updated: 2026/01/26 18:42:21 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,24 @@ int	ft_calculate_range(t_stack **stack)
 	return (range);
 }
 
-void	ft_ksort(t_stack *a)
+int	ft_find_max_pos(t_stack *stack)
 {
-	t_stack	*node;
+	int	max_index;
+	int	pos;
+	int	max_pos;
 	
-	node = a;
-	if (node->index <= range)
-		
+	pos = 0;
+	max_pos = 0;
+	max_index = -1;
+	while (stack)
+	{
+		if (stack->index > max_index)
+		{
+			max_index = stack->index;
+			max_pos = pos;
+		}
+		stack = stack->next;
+		pos++;
+	}
+	return (max_pos);
 }
