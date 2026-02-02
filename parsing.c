@@ -6,7 +6,7 @@
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 11:42:18 by albelmon          #+#    #+#             */
-/*   Updated: 2026/01/19 17:47:22 by albelmon         ###   ########.fr       */
+/*   Updated: 2026/02/02 19:04:32 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int	ft_check_input(int argc, char **argv, t_stack **a)
 	while (i < argc)
 	{
 		str_num = ft_split(argv[i++], ' ');
-		if (!str_num)
-			ft_error(a, NULL);
+		if (!str_num || !str_num[0])
+			ft_error(a, str_num);
 		j = 0;
 		while (str_num[j])
 		{

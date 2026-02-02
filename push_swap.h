@@ -6,7 +6,7 @@
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 23:08:02 by albelmon          #+#    #+#             */
-/*   Updated: 2026/02/02 17:58:42 by albelmon         ###   ########.fr       */
+/*   Updated: 2026/02/02 19:08:34 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ void	ft_push_a(t_stack **a, t_stack **b, int bool);
 void	ft_push_b(t_stack **b, t_stack **a, int bool);
 void	ft_rotate(t_stack **stack, char x, int bool);
 void	ft_reverse_rotate(t_stack **stack, char x, int bool);
-void	ft_swap_both(t_stack *a, t_stack *b);
-void	ft_rotate_both(t_stack *a, t_stack *b);
-void	ft_reverse_rotate_both(t_stack *a, t_stack *b);
+void	ft_swap_both(t_stack **a, t_stack **b);
+void	ft_rotate_both(t_stack **a, t_stack **b);
+void	ft_reverse_rotate_both(t_stack **a, t_stack **b);
 
 /*						KSORT						*/
 void	ft_assign_index(t_stack *a);
@@ -58,5 +58,6 @@ int		ft_calculate_range(t_stack **stack);
 int		ft_find_max_pos(t_stack *stack);
 void	ft_phase_A(t_stack **a, t_stack **b);
 void	ft_phase_B(t_stack **a, t_stack **b);
+int		ft_is_sorted(t_stack *stack);
 
 #endif
