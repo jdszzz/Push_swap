@@ -6,7 +6,7 @@
 #    By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/16 00:41:04 by albelmon          #+#    #+#              #
-#    Updated: 2026/01/16 00:41:05 by albelmon         ###   ########.fr        #
+#    Updated: 2026/02/02 17:44:27 by albelmon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,13 +18,14 @@ LIBFT = $(LIBFT_DIR)/libft.a
 CC= cc
 CFLAGS= -Wall -Werror -Wextra -g
 
-SRC=		ft_parsing.c \
-			ps_ops.c \
-			ps_ops2.c \
-			ps_sort.c \
-			ps_sort2.c \
-			ps_stack.c \
-			push_swap.c \
+SRC=		error.c			\
+			ksort_utils.c	\
+			ksort.c			\
+			movements.c		\
+			movements2.c	\
+			parsing.c		\
+			push_swap.c		\
+			stack_utils.c	\
 
 OBJ = $(SRC:.c=.o)
 
