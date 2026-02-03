@@ -6,7 +6,7 @@
 #    By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/16 00:41:04 by albelmon          #+#    #+#              #
-#    Updated: 2026/02/02 17:44:27 by albelmon         ###   ########.fr        #
+#    Updated: 2026/02/03 16:17:39 by albelmon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRC=		error.c			\
 			parsing.c		\
 			push_swap.c		\
 			stack_utils.c	\
+			main.c			\
 
 OBJ = $(SRC:.c=.o)
 

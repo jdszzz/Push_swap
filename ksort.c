@@ -6,7 +6,7 @@
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 18:26:49 by albelmon          #+#    #+#             */
-/*   Updated: 2026/02/02 19:24:29 by albelmon         ###   ########.fr       */
+/*   Updated: 2026/02/03 15:05:31 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,50 @@ void	ft_phase_B(t_stack **a, t_stack **b)
 			ft_rotate(b, 'b', 1);
 		else
 			ft_reverse_rotate(b, 'b', 1);
+	}
+}
+
+void	ft_sort_3(t_stack **a)
+{
+	int	first;
+	int	second;
+	int	third;
+
+	first = (*a)->index;
+	second = (*a)->next->index;
+	third = (*a)->next->next->index;
+	if (first > second && second < third && first < third)
+		ft_swap(a, 'a', 1);
+	else if (first > second && second > third)
+	{
+		ft_swap(a, 'a', 1);
+		ft_reverse_rotate(a, 'a', 1);
+	}
+	else if (first > second && second < third && first > third)
+		ft_rotate(a, 'a', 1);
+	else if (first < second && second > third && first < third)
+	{
+		ft_swap(a, 'a', 1);
+		ft_rotate(a, 'a', 1);
+	}
+	else if (first < second && second > third && first > third)
+		ft_reverse_rotate(a, 'a', 1);
+}
+
+void	ft_sort_5(t_stack **a,t_stack **b, int size)
+{
+	if (size == 4)
+	{
+		ft_push_smallest_to_b(a, b);
+		ft_sort_3(a);
+		ft_push_a(a, b, 1);
+	}
+	if (size == 5)
+	{
+		ft_push_smallest_to_b(a, b);
+		ft_push_smallest_to_b(a, b);
+		ft_sort_3(a);
+		ft_push_a(a, b, 1);
+		ft_push_a(a, b, 1);
 	}
 }

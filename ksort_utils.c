@@ -6,7 +6,7 @@
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 19:01:51 by albelmon          #+#    #+#             */
-/*   Updated: 2026/02/02 19:28:50 by albelmon         ###   ########.fr       */
+/*   Updated: 2026/02/03 14:09:52 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,29 @@ int	ft_find_max_pos(t_stack *stack)
 		pos++;
 	}
 	return (max_pos);
+}
+
+int	ft_find_min_pos(t_stack *stack)
+{
+	int	min_index;
+	int	pos;
+	int	min_pos;
+	
+	pos = 0;
+	min_pos = 0;
+	if (stack)
+		min_index = stack->index;
+	while (stack)
+	{
+		if (stack->index < min_index)
+		{
+			min_index = stack->index;
+			min_pos = pos;
+		}
+		stack = stack->next;
+		pos++;
+	}
+	return (min_pos);
 }
 
 int	ft_is_sorted(t_stack *stack)

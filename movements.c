@@ -6,7 +6,7 @@
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 16:00:47 by albelmon          #+#    #+#             */
-/*   Updated: 2026/01/26 19:25:12 by albelmon         ###   ########.fr       */
+/*   Updated: 2026/02/03 16:15:07 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ void	ft_swap(t_stack **stack, char x, int bool)
 	*stack = second;
 	if (bool)
 	{
-		write(1, 's', 1);
+		write(1, "s", 1);
 		write(1, &x, 1);
-		write(1, '\n', 1);
+		write(1, "\n", 1);
 	}
 }
 
@@ -96,9 +96,9 @@ void	ft_rotate(t_stack **stack, char x, int bool)
 	first->next = NULL;
 	if (bool)
 	{
-		write(1, 'r', 1);
+		write(1, "r", 1);
 		write(1, &x, 1);
-		write(1, '\n', 1);
+		write(1, "\n", 1);
 	}
 }
 
@@ -122,6 +122,6 @@ void	ft_reverse_rotate(t_stack **stack, char x, int bool)
 	{
 		write(1, "rr", 2);
 		write(1, &x, 1);
-		write(1, '\n', 1);
+		write(1, "\n", 1);
 	}
 }

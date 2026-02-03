@@ -6,7 +6,7 @@
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 19:39:55 by albelmon          #+#    #+#             */
-/*   Updated: 2026/02/02 19:29:24 by albelmon         ###   ########.fr       */
+/*   Updated: 2026/02/03 15:10:38 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,9 @@ void	ft_sort_stack(t_stack **a, t_stack **b)
 	if (size == 2)
 		ft_swap(a, 'a', 1);
 	else if (size == 3)
-		ft_sort_3();
-	else if (size == 4)
-		ft_sort_4();
-	else if (size == 5)
-		ft_sort_5();
+		ft_sort_3(a);
+	else if (size <= 5)
+		ft_sort_5(a, b, size);
 	else
 	{
 		ft_phase_A(a, b);
@@ -43,9 +41,10 @@ int	push_swap(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	ft_check_input(argc, argv, &a);
+	ft_assign_index(a);
 	if (!ft_is_sorted(a))
-	{
-		ft_sort_stack(a, b);
-	}
+		ft_sort_stack(&a, &b);
+	ft_free_stack(&a);
+	ft_free_stack(&b);
 	return (0);
 }
