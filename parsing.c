@@ -6,7 +6,7 @@
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 11:42:18 by albelmon          #+#    #+#             */
-/*   Updated: 2026/02/02 19:04:32 by albelmon         ###   ########.fr       */
+/*   Updated: 2026/02/03 17:46:09 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_check_input(int argc, char **argv, t_stack **a)
 int	ft_process_number(char *str_num, t_stack **a)
 {
 	long	num;
-	
+
 	if (!ft_is_string_digit(str_num))
 		return (0);
 	num = ft_atoi_ps(str_num);

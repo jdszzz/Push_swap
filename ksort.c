@@ -6,17 +6,17 @@
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 18:26:49 by albelmon          #+#    #+#             */
-/*   Updated: 2026/02/03 15:05:31 by albelmon         ###   ########.fr       */
+/*   Updated: 2026/02/03 17:44:37 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_phase_A(t_stack **a, t_stack **b)
+void	ft_phase_a(t_stack **a, t_stack **b)
 {
 	int		i;
 	int		range;
-	
+
 	i = 0;
 	range = ft_calculate_range(a);
 	while (*a)
@@ -37,11 +37,11 @@ void	ft_phase_A(t_stack **a, t_stack **b)
 	}
 }
 
-void	ft_phase_B(t_stack **a, t_stack **b)
+void	ft_phase_b(t_stack **a, t_stack **b)
 {
 	int	max_pos;
 	int	stack_size;
-	
+
 	while (*b)
 	{
 		max_pos = ft_find_max_pos(*b);
@@ -82,7 +82,7 @@ void	ft_sort_3(t_stack **a)
 		ft_reverse_rotate(a, 'a', 1);
 }
 
-void	ft_sort_5(t_stack **a,t_stack **b, int size)
+void	ft_sort_5(t_stack **a, t_stack **b, int size)
 {
 	if (size == 4)
 	{

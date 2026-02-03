@@ -6,7 +6,7 @@
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 15:31:37 by albelmon          #+#    #+#             */
-/*   Updated: 2026/02/02 18:12:16 by albelmon         ###   ########.fr       */
+/*   Updated: 2026/02/03 17:41:28 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_free_stack(t_stack **stack)
 {
 	t_stack	*tmp;
-	
+
 	if (!stack || !*stack)
 		return ;
 	while (*stack)

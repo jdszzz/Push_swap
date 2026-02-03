@@ -6,7 +6,7 @@
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 19:10:32 by albelmon          #+#    #+#             */
-/*   Updated: 2026/02/02 16:13:00 by albelmon         ###   ########.fr       */
+/*   Updated: 2026/02/03 17:47:29 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_add_to_stack(t_stack **a, int value)
 {
-	t_stack *new_node;
+	t_stack	*new_node;
 	t_stack	*last_node;
 
 	new_node = malloc(sizeof(t_stack));

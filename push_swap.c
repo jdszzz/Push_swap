@@ -6,11 +6,10 @@
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 19:39:55 by albelmon          #+#    #+#             */
-/*   Updated: 2026/02/03 15:10:38 by albelmon         ###   ########.fr       */
+/*   Updated: 2026/02/03 17:48:10 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Objetivo: Orden ascendente, es decir: El número más pequeño top y el más grande bot
 #include "push_swap.h"
 
 void	ft_sort_stack(t_stack **a, t_stack **b)
@@ -26,15 +25,15 @@ void	ft_sort_stack(t_stack **a, t_stack **b)
 		ft_sort_5(a, b, size);
 	else
 	{
-		ft_phase_A(a, b);
-		ft_phase_B(a, b);
+		ft_phase_a(a, b);
+		ft_phase_b(a, b);
 	}
 }
 
 int	push_swap(int argc, char **argv)
 {
-	t_stack *a;
-	t_stack *b;
+	t_stack	*a;
+	t_stack	*b;
 
 	b = NULL;
 	a = NULL;

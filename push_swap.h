@@ -6,7 +6,7 @@
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 23:08:02 by albelmon          #+#    #+#             */
-/*   Updated: 2026/02/03 16:12:46 by albelmon         ###   ########.fr       */
+/*   Updated: 2026/02/03 17:46:56 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,11 @@ void	ft_push_smallest_to_b(t_stack **a, t_stack **b);
 void	ft_assign_index(t_stack *a);
 int		ft_calculate_range(t_stack **stack);
 int		ft_find_max_pos(t_stack *stack);
-void	ft_phase_A(t_stack **a, t_stack **b);
-void	ft_phase_B(t_stack **a, t_stack **b);
+void	ft_phase_a(t_stack **a, t_stack **b);
+void	ft_phase_b(t_stack **a, t_stack **b);
 int		ft_is_sorted(t_stack *stack);
 int		ft_find_min_pos(t_stack *stack);
 void	ft_sort_3(t_stack **a);
-void	ft_sort_5(t_stack **a,t_stack **b, int size);
+void	ft_sort_5(t_stack **a, t_stack **b, int size);
 
 #endif

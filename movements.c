@@ -6,13 +6,12 @@
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 16:00:47 by albelmon          #+#    #+#             */
-/*   Updated: 2026/02/03 16:15:07 by albelmon         ###   ########.fr       */
+/*   Updated: 2026/02/03 17:45:46 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//sa-sb-ss: Intercambia los dos primeros elementos en la cima de la pila. No hace nada si hay uno o ningún elemento.
 void	ft_swap(t_stack **stack, char x, int bool)
 {
 	t_stack	*first;
@@ -37,7 +36,6 @@ void	ft_swap(t_stack **stack, char x, int bool)
 	}
 }
 
-//pa: Toma el primer elemento en la cima de b y lo pone en la cima de a. No hace nada si b está vacía.
 void	ft_push_a(t_stack **a, t_stack **b, int bool)
 {
 	t_stack	*node;
@@ -57,7 +55,6 @@ void	ft_push_a(t_stack **a, t_stack **b, int bool)
 		write(1, "pa\n", 3);
 }
 
-//pb: Toma el primer elemento en la cima de a y lo pone en la cima de b. No hace nada si a está vacía.
 void	ft_push_b(t_stack **b, t_stack **a, int bool)
 {
 	t_stack	*node;
@@ -77,7 +74,6 @@ void	ft_push_b(t_stack **b, t_stack **a, int bool)
 		write(1, "pb\n", 3);
 }
 
-//ra-rb: Desplaza hacia arriba todos los elementos de la pila a una posición. El primer elemento se convierte en el último.
 void	ft_rotate(t_stack **stack, char x, int bool)
 {
 	t_stack	*first;
@@ -102,7 +98,6 @@ void	ft_rotate(t_stack **stack, char x, int bool)
 	}
 }
 
-//rra-rrb: Desplaza hacia abajo todos los elementos de la pila a una posición. El último elemento se convierte en el primero.
 void	ft_reverse_rotate(t_stack **stack, char x, int bool)
 {
 	t_stack	*last;

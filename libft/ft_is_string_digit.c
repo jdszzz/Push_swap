@@ -6,7 +6,7 @@
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 12:24:38 by albelmon          #+#    #+#             */
-/*   Updated: 2026/01/16 12:51:44 by albelmon         ###   ########.fr       */
+/*   Updated: 2026/02/03 17:43:57 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ int	ft_is_string_digit(char	*str)
 		i++;
 	if (str[i] == '\0')
 		return (0);
-	while(str[i])
+	while (str[i])
 	{
 		if (!(str[i] >= '0' && str[i] <= '9'))
 			return (0);
-		i++;	
+		i++;
 	}
 	return (1);
 }
