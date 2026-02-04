@@ -6,7 +6,7 @@
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 23:08:02 by albelmon          #+#    #+#             */
-/*   Updated: 2026/02/03 17:46:56 by albelmon         ###   ########.fr       */
+/*   Updated: 2026/02/04 13:44:11 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ typedef struct s_stack
 }	t_stack;
 
 /*						PUSH_SWAP					*/
-int		push_swap(int argc, char **argv);
+int		main(int argc, char **argv);
+void	ft_sort_stack(t_stack **a, t_stack **b);
 
 /*						PARSING						*/
 int		ft_check_input(int argc, char **argv, t_stack **a);

@@ -6,7 +6,7 @@
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 19:01:51 by albelmon          #+#    #+#             */
-/*   Updated: 2026/02/03 17:44:59 by albelmon         ###   ########.fr       */
+/*   Updated: 2026/02/04 14:19:32 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,11 @@ int	ft_calculate_range(t_stack **stack)
 	if (size <= 10)
 		range = 2;
 	else if (size <= 100)
-		range = size / 6 + 2;
+		range = size / 5;
+	else if (size <= 500)
+		range = size / 11;
 	else
-		range = size / 14 + 10;
+		range = size / 12;
 	return (range);
 }
 

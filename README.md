@@ -1,23 +1,52 @@
-Top son los primeros argumetos que recibe.
+*This project has been created as part of the 42 curriculum by albelmon.*
 
-🔄 Intercambios (Swaps)
--sa (swap a): Intercambia los dos primeros elementos en la cima de la pila a. No hace nada si hay uno o ningún elemento.
--sb (swap b): Intercambia los dos primeros elementos en la cima de la pila b. No hace nada si hay uno o ningún elemento.
--ss: Ejecuta sa y sb al mismo tiempo.
+# Push_swap
 
+## Description
 
-📥 Empujar (Pushes)
--pa (push a): Toma el primer elemento en la cima de b y lo pone en la cima de a. No hace nada si b está vacía.
--pb (push b): Toma el primer elemento en la cima de a y lo pone en la cima de b. No hace nada si a está vacía.
+**Push_swap** is a 42 school algorithm project that requires sorting data on a stack, with a limited set of instructions, using the lowest possible number of actions. To succeed, you have to manipulate various types of algorithms and choose the most efficient solution for data sorting.
 
+The goal is to write a program in C called `push_swap` which calculates and displays on the standard output the smallest program, made of Push_swap language instructions, that sorts the integers received as arguments.
 
-⬆️ Rotaciones (Rotates)
--ra (rotate a): Desplaza hacia arriba todos los elementos de la pila a una posición. El primer elemento se convierte en el último.
--rb (rotate b): Desplaza hacia arriba todos los elementos de la pila b una posición. El primer elemento se convierte en el último.
--rr: Ejecuta ra y rb al mismo tiempo.
+### The Rules
+You have two stacks named A and B.
+* **Stack A**: Contains a random amount of non-duplicated negative and/or positive numbers.
+* **Stack B**: Is empty.
+* The goal is to sort the numbers in Stack A in ascending order using operations like `sa` (swap a), `pb` (push b), `ra` (rotate a), `rra` (reverse rotate a), etc.
 
+## Instructions
 
-⬇️ Rotaciones Inversas (Reverse Rotates)
--rra (reverse rotate a): Desplaza hacia abajo todos los elementos de la pila a una posición. El último elemento se convierte en el primero.
--rrb (reverse rotate b): Desplaza hacia abajo todos los elementos de la pila b una posición. El último elemento se convierte en el primero.
--rrr: Ejecuta rra y rrb al mismo tiempo.
+The project works with two stacks, A and B, using a specific set of instructions to sort the numbers:
+
+### 🔄 Swaps
+* **sa (swap a):** Swap the first 2 elements at the top of stack `a`. Do nothing if there is only one or no elements.
+* **sb (swap b):** Swap the first 2 elements at the top of stack `b`. Do nothing if there is only one or no elements.
+* **ss:** `sa` and `sb` at the same time.
+
+### 📥 Pushes
+* **pa (push a):** Take the first element at the top of `b` and put it at the top of `a`. Do nothing if `b` is empty.
+* **pb (push b):** Take the first element at the top of `a` and put it at the top of `b`. Do nothing if `a` is empty.
+
+### ⬆️ Rotations
+* **ra (rotate a):** Shift up all elements of stack `a` by 1. The first element becomes the last one.
+* **rb (rotate b):** Shift up all elements of stack `b` by 1. The first element becomes the last one.
+* **rr:** `ra` and `rb` at the same time.
+
+### ⬇️ Reverse Rotations
+* **rra (reverse rotate a):** Shift down all elements of stack `a` by 1. The last element becomes the first one.
+* **rrb (reverse rotate b):** Shift down all elements of stack `b` by 1. The last element becomes the first one.
+* **rrr:** `rra` and `rrb` at the same time.
+
+## Resources
+### Learning the Algorithm
+* **K-Sort Logic:** I learned the conceptual logic of the K-Sort (Chunk Sort) algorithm through various community tutorials on **YouTube** and technical blogs. These resources were essential to visualize how "chunks" move between stacks to minimize operations.
+* **AI Implementation:** Specifically, it helped me calculate the most efficient mathematical ranges for the chunks and debug the pointer reassignment in the doubly linked list, ensuring the implementation was both fast and leak-free.
+
+### Compilation
+The project uses a `Makefile` to compile the source code. To compile the program, run the following command in the root of the repository:
+
+```bash
+make
+ARG=$(shuf -i 0-2147483647 -n 500 | awk '{printf "%d ", $1 * (rand() < 0.5 ? 1 : - 1)}')
+./push_swap $ARG | wc -l
+./push_swap $ARG | ./checker_linux $ARG
