@@ -6,7 +6,7 @@
 /*   By: albelmon <albelmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 19:39:55 by albelmon          #+#    #+#             */
-/*   Updated: 2026/02/03 17:48:10 by albelmon         ###   ########.fr       */
+/*   Updated: 2026/02/03 20:00:38 by albelmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_sort_stack(t_stack **a, t_stack **b)
 	}
 }
 
-int	push_swap(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_stack	*a;
 	t_stack	*b;
